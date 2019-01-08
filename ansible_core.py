@@ -64,8 +64,7 @@ class Runner(object):
                                check=False, diff=False, private_key_file=self.private_key_file,
                                remote_user=self.ansible_ssh_user)
 
-        self.passwords = dict(
-            vault_pass=self.ansible_vault_key, conn_pass=self.passwords)
+        self.passwords = dict(conn_pass=self.passwords)
 
         self.inventory = InventoryManager(
             loader=self.loader, sources=self.resource)
